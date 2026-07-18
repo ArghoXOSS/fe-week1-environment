@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <h1>User Settings</h1>
+        <p>Manage your profile details and preferences.</p>
+      </header>
+
+      <form id="settings-form" class="settings-form" novalidate>
+        <div class="field">
+          <label for="displayName">Display name</label>
+          <div class="field__control">
+            <input
+              type="text"
+              id="displayName"
+              name="displayName"
+              autocomplete="name"
+              required
+              aria-describedby="displayName-error"
+            />
+            <span
+              id="displayName-error"
+              class="field__error"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <div class="field__control">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              aria-describedby="email-error"
+            />
+            <span
+              id="email-error"
+              class="field__error"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="timeZone">Time zone</label>
+          <div class="field__control">
+            <select
+              id="timeZone"
+              name="timeZone"
+              required
+              aria-describedby="timeZone-error"
+            >
+              <option value="">Select a time zone</option>
+              <option value="Pacific/Honolulu">Pacific/Honolulu (HST)</option>
+              <option value="America/Los_Angeles">America/Los_Angeles (PT)</option>
+              <option value="America/Denver">America/Denver (MT)</option>
+              <option value="America/Chicago">America/Chicago (CT)</option>
+              <option value="America/New_York">America/New_York (ET)</option>
+              <option value="Europe/London">Europe/London (GMT/BST)</option>
+              <option value="Europe/Paris">Europe/Paris (CET)</option>
+              <option value="Asia/Dhaka">Asia/Dhaka (BST)</option>
+              <option value="Asia/Tokyo">Asia/Tokyo (JST)</option>
+              <option value="Australia/Sydney">Australia/Sydney (AEST)</option>
+              <option value="UTC">UTC</option>
+            </select>
+            <span
+              id="timeZone-error"
+              class="field__error"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>Theme preference</legend>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="theme-light" name="theme" value="light" />
+              <label for="theme-light">Light</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="theme-dark" name="theme" value="dark" />
+              <label for="theme-dark">Dark</label>
+            </div>
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="theme-system"
+                name="theme"
+                value="system"
+                checked
+              />
+              <label for="theme-system">System</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="field field--checkbox">
+          <input type="checkbox" id="emailNotifications" name="emailNotifications" />
+          <label for="emailNotifications">Send email notifications</label>
+        </div>
+
+        <div class="form-actions">
+          <button type="reset" class="btn btn--secondary">Reset</button>
+          <button type="submit" class="btn btn--primary">Save settings</button>
+        </div>
+
+        <div
+          id="form-status"
+          class="form-status"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+      </form>
+    </main>
+
+    <script src="validation.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
