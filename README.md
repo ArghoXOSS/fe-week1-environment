@@ -13,7 +13,17 @@ This repository contains my FlyRank AI Front-End Engineering internship Week 1 e
 
 ## Setup
 
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [Git](https://git-scm.com/)
+
+### Installation
+
 Clone the repository and install dependencies:
 
 ```bash
+git clone https://github.com/ArghoXOSS/fe-week1-environment.git
+cd fe-week1-environment
 npm install
+```
