@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <h1>User Settings</h1>
+        <p>Update your profile and preferences.</p>
+      </header>
+
+      <form id="settings-form" class="settings-form" novalidate>
+        <section class="form-section">
+          <h2>Profile</h2>
+
+          <div class="form-group">
+            <label for="fullName">Full name <span class="required">*</span></label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              autocomplete="name"
+              placeholder="Jane Doe"
+            />
+            <span class="error-message" id="fullName-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="jane@example.com"
+            />
+            <span class="error-message" id="email-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username <span class="required">*</span></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+              placeholder="janedoe"
+            />
+            <span class="hint">3–20 characters, letters, numbers, and underscores only.</span>
+            <span class="error-message" id="username-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea
+              id="bio"
+              name="bio"
+              rows="3"
+              maxlength="200"
+              placeholder="Tell us a little about yourself…"
+            ></textarea>
+            <span class="char-count"><span id="bio-count">0</span>/200</span>
+            <span class="error-message" id="bio-error" role="alert"></span>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Preferences</h2>
+
+          <div class="form-group">
+            <label for="theme">Theme</label>
+            <select id="theme" name="theme">
+              <option value="system">System default</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+
+          <div class="form-group form-group--checkbox">
+            <label class="checkbox-label">
+              <input type="checkbox" id="notifications" name="notifications" />
+              Email me about account activity
+            </label>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Security</h2>
+
+          <div class="form-group">
+            <label for="password">New password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="new-password"
+              placeholder="Leave blank to keep current password"
+            />
+            <span class="hint">At least 8 characters with one letter and one number.</span>
+            <span class="error-message" id="password-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              autocomplete="new-password"
+              placeholder="Re-enter new password"
+            />
+            <span class="error-message" id="confirmPassword-error" role="alert"></span>
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <button type="reset" class="btn btn-secondary">Reset</button>
+          <button type="submit" class="btn btn-primary">Save settings</button>
+        </div>
+
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
